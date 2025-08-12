@@ -1,0 +1,47 @@
+questions:
+  - variable: replicaCount
+    label: Liczba replik
+    description: Ile podów uruchomić
+    type: int
+    default: 1
+    required: true
+
+  - variable: image.repository
+    label: Obraz kontenera
+    type: string
+    default: nginxdemos/hello
+
+  - variable: image.tag
+    label: Tag obrazu
+    type: string
+    default: latest
+
+  - variable: service.type
+    label: Typ usługi (Service)
+    type: enum
+    options:
+      - ClusterIP
+      - NodePort
+      - LoadBalancer
+    default: ClusterIP
+
+  - variable: service.port
+    label: Port serwisu
+    type: int
+    default: 80
+
+  - variable: ingress.enabled
+    label: Włącz Ingress
+    type: boolean
+    default: true
+
+  - variable: ingress.hosts[0].host
+    label: Host dla Ingress
+    type: string
+    default: hello.local
+
+  - variable: env
+    label: Zmienne środowiskowe
+    description: Lista zmiennych środowiskowych dla kontenera
+    type: array
+    default: []
