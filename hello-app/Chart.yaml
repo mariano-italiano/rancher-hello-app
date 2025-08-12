@@ -1,0 +1,17 @@
+apiVersion: v2
+name: hello-app
+description: Prosty serwis "Hello" do testów i demo w Rancherze
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - demo
+  - hello
+  - rancher
+sources:
+  - https://github.com/example/hello-app-chart
+annotations:
+  catalog.cattle.io/display-name: "Hello App"
+  catalog.cattle.io/kube-version: ">=1.24.0-0"
+  catalog.cattle.io/os: linux
+  catalog.cattle.io/experimental: "true"
