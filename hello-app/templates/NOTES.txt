@@ -1,0 +1,4 @@
+1. Jeśli włączyłeś Ingress, spróbuj: http://<host z values.yaml>
+2. Bez Ingress użyj polecenia:
+   kubectl port-forward svc/{{ include "hello-app.fullname" . }} 8080:{{ .Values.service.port }}
+   i otwórz http://localhost:8080
